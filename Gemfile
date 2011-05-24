@@ -8,6 +8,7 @@ gem 'rails', '3.0.6'
 gem 'sqlite3'
 gem 'devise'
 gem 'haml'
+gem 'formtastic', '~> 1.2.3'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
