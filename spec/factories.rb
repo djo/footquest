@@ -1,6 +1,7 @@
 Factory.define :user do |f|
   f.first_name 'John'
   f.last_name 'Doe'
+  f.password 'password'
   f.email { Factory.next(:email) }
 end  
 
