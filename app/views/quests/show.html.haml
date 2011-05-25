@@ -1,0 +1,25 @@
+%h1= @quest.title
+
+.description= @quest.description
+
+.meeting_place
+  Место встречи: 
+  = @quest.meeting_place
+
+.meeting_at
+  Время сбора: 
+  = @quest.meeting_at
+
+.start_at
+  Время старта: 
+  = @quest.start_at
+
+.cost
+  За: 
+  = @quest.cost
+ 
+= link_to 'Изменить', edit_quest_path(@quest)  
+|
+= link_to 'Удалить', quest_path(@quest), :method => :delete, :confirm => 'Точно?'
+|
+= link_to 'К списку', quests_path

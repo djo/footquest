@@ -1,0 +1,10 @@
+= semantic_form_for quest do |form|
+  = form.inputs do
+    = form.input :title
+    = form.input :description
+    = form.input :meeting_place
+    = form.input :meeting_at, :as => :datetime
+    = form.input :start_at, :as => :datetime
+    = form.input :cost
+  = form.buttons do
+    = form.commit_button 'Сохранить'
