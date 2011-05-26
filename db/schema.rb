@@ -30,7 +30,6 @@ ActiveRecord::Schema.define(:version => 20110526153555) do
     t.datetime "updated_at"
     t.string   "email",                               :default => "", :null => false
     t.string   "encrypted_password",   :limit => 128, :default => ""
-    t.string   "password_salt",                       :default => ""
     t.string   "reset_password_token"
     t.string   "remember_token"
     t.datetime "remember_created_at"
@@ -39,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20110526153555) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "password_salt"
     t.string   "invitation_token",     :limit => 20
     t.datetime "invitation_sent_at"
   end
