@@ -1,0 +1,11 @@
+%h2 Отправить приглашение
+
+= semantic_form_for resource, :as => resource_name, :url => invitation_path(resource_name)  do |form|
+  = form.inputs do
+    = form.input :first_name
+    = form.input :last_name
+    = form.input :email
+  = form.buttons do
+    = form.commit_button 'Пригласить'
+
+= link_to "Home", after_sign_in_path_for(resource_name)

@@ -52,6 +52,9 @@ Devise.setup do |config|
   # Time interval where the invitation token is valid (default: 0).
   # If invite_for is 0 or nil, the invitation will never expire.
   # config.invite_for = 2.weeks
+
+  # Force a record to be valid before being actually invited
+  config.validate_on_invite = true
   
   # ==> Configuration for :confirmable
   # The time you want to give your user to confirm his account. During this time

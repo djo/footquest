@@ -6,11 +6,11 @@ gem 'rails', '3.0.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem 'devise'
+gem 'devise', '~> 1.2.0'
 gem 'haml'
 gem 'formtastic', '~> 1.2.3'
 gem 'inherited_resources'
-gem 'devise_invitable'
+gem 'devise_invitable', '~> 0.4.0'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.4"
