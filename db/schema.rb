@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110526153555) do
+ActiveRecord::Schema.define(:version => 20110607145319) do
 
   create_table "quests", :force => true do |t|
     t.string   "title",                                       :null => false
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(:version => 20110526153555) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "first_name",                                          :null => false
-    t.string   "last_name",                                           :null => false
+    t.string   "first_name",                                                   :null => false
+    t.string   "last_name",                                                    :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "email",                               :default => "", :null => false
+    t.string   "email",                               :default => "",          :null => false
     t.string   "encrypted_password",   :limit => 128, :default => ""
     t.string   "reset_password_token"
     t.string   "remember_token"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(:version => 20110526153555) do
     t.string   "password_salt"
     t.string   "invitation_token",     :limit => 20
     t.datetime "invitation_sent_at"
+    t.string   "role",                                :default => "moderator", :null => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
