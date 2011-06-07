@@ -11,9 +11,10 @@ gem 'haml'
 gem 'formtastic', '~> 1.2.3'
 gem 'inherited_resources'
 gem 'devise_invitable', '~> 0.4.0'
+gem 'cancan'
 
 group :test, :development do
-  gem "rspec-rails", "~> 2.4"
+  gem "rspec-rails"
   gem 'factory_girl_rails'
 end
 
