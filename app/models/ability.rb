@@ -2,6 +2,21 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user ||= User.new # guest user (not logged in)
+
+    if user.role? :admin
+      # Grant Admin users 
+      can :manage, :all
+    elsif user.role? :moderator
+      # Quest Moderator users
+      
+      #TODO should moderate only own quests
+      can :manage, Quest
+    else
+      # Not Authorized users
+      can :read, Quest
+    end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

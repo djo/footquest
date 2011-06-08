@@ -6,4 +6,5 @@
   .meeting_at=l quest.meeting_at, :format => :short
   .more= link_to 'Описание', quest
   
-= link_to 'Новый Квест', new_quest_path  
+- if can? :create, Quest
+  = link_to 'Новый Квест', new_quest_path  

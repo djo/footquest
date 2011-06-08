@@ -18,8 +18,12 @@
   За: 
   = @quest.cost
  
-= link_to 'Изменить', edit_quest_path(@quest)  
-|
-= link_to 'Удалить', quest_path(@quest), :method => :delete, :confirm => 'Точно?'
-|
+- if can? :update, Quest
+  = link_to 'Изменить', edit_quest_path(@quest)  
+  |
+  
+- if can? :destroy, Quest
+  = link_to 'Удалить', quest_path(@quest), :method => :delete, :confirm => 'Точно?'
+  |
+  
 = link_to 'К списку', quests_path
