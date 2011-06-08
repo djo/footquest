@@ -5,10 +5,13 @@ class Ability
 
     if user.nil?
       # Not authorized user
+      
       can :read, Quest
     elsif user.role? :admin
       # Grant Admin users 
+      
       can :manage, :all
+      # can :invite, User
     elsif user.role? :moderator
       # Quest Moderator users
       
