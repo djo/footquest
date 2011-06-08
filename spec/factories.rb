@@ -3,7 +3,6 @@ Factory.define :user do |f|
   f.last_name 'Doe'
   f.password 'password'
   f.email { Factory.next(:email) }
-  f.role 'moderator'
 end  
 
 Factory.define :quest do |f|
