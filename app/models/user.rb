@@ -13,4 +13,14 @@ class User < ActiveRecord::Base
   def role?(role)
     self.role == role.to_s
   end
+  
+  private
+  
+  def mass_assignment_authorizer
+    if accessible == 'admin'
+      super + [:role]
+    else
+      super
+    end
+  end
 end
