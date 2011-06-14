@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %meta{ 'content' => "text/html; charset=UTF-8", 'http-equiv' => "Content-Type" }
+  %body
+    %h1 Приглашение
+    
+    Данные вашего аккаунта:
+    
+    .login
+      Логин:
+      %strong= @user.email
+    
+    .password
+      Пароль:
+      %strong= @user.password
+    
+    %br
+    
+    = link_to root_url, root_url 
+    
+    %br
+    %hr
+    Footquest

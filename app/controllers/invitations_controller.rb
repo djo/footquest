@@ -10,6 +10,7 @@ class InvitationsController < ApplicationController
 
   def create
     if @user.update_attributes(params[:user])
+      UserMailer.invitation_email(@user).deliver
       redirect_to root_url, :notice => 'Приглашение отослано'
     else
       render :new
