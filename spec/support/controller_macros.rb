@@ -1,5 +1,5 @@
 module ControllerMacros
-  def should_deny_unauthenticated_user(&block)
+  def should_deny_unauthenticated_users(&block)
     it "should deny an unauthenticated user" do
       sign_out @user if @user
 
@@ -9,18 +9,18 @@ module ControllerMacros
     end
   end
   
-  def should_deny_unauthenticated_user_to(actions, resource = nil)
+  def should_deny_unauthenticated_users_to(actions, resource = nil)
     actions.each do |action|
       if [:index, :new].include?(action)
-        should_deny_unauthenticated_user { get action }
+        should_deny_unauthenticated_users { get action }
       elsif :create == action
-        should_deny_unauthenticated_user { post action }
+        should_deny_unauthenticated_users { post action }
       elsif [:show, :edit].include?(action)
-        should_deny_unauthenticated_user { get action, :id => resource.to_param }
+        should_deny_unauthenticated_users { get action, :id => resource.to_param }
       elsif :update == action
-        should_deny_unauthenticated_user { put action, :id => resource.to_param }
+        should_deny_unauthenticated_users { put action, :id => resource.to_param }
       elsif :destroy == action
-        should_deny_unauthenticated_user { delete action, :id => resource.to_param }
+        should_deny_unauthenticated_users { delete action, :id => resource.to_param }
       else
         raise "Not supported action"
       end
