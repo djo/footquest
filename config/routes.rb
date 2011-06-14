@@ -4,6 +4,7 @@ Footquest::Application.routes.draw do
   root :to => "quests#index"
   
   resources :quests
+  resources :invitations, :only => [:new, :create]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
