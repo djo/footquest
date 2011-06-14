@@ -10,7 +10,6 @@ gem 'devise', '~> 1.2.0'
 gem 'haml'
 gem 'formtastic', '~> 1.2.3'
 gem 'inherited_resources'
-gem 'devise_invitable', '~> 0.4.0'
 gem 'cancan'
 
 group :test, :development do

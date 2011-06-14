@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :invitable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
   ROLES = ['admin', 'moderator']
 
