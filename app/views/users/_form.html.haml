@@ -3,5 +3,9 @@
     = form.input :first_name
     = form.input :last_name
     = form.input :email
+    
+    - if current_user.role? :admin
+      = form.input :role, :as => :select, :collection => User::ROLES
+  
   = form.buttons do
     = form.commit_button 'Сохранить'
