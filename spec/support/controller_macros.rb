@@ -1,7 +1,7 @@
 module ControllerMacros
   # Admin's macroses
   # ---------------------------------------------------
-  def should_allow_only_admin(&block)
+  def should_allow_only_admins(&block)
     it "should be only admin and moderator roles" do
       User::ROLES.should == ['admin', 'moderator']
     end
@@ -37,7 +37,7 @@ module ControllerMacros
   end
 
   def should_allow_only_admins_to(actions, resource = nil)
-    check_resource :should_allow_only_admin, actions, resource
+    check_resource :should_allow_only_admins, actions, resource
   end
 
   # Moderator's macroses

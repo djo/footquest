@@ -4,22 +4,18 @@ class Ability
   def initialize(user)
 
     if user.nil?
-      # Not authorized user
-      
       can :read, Quest
-    elsif user.role? :admin
-      # Grant Admin users 
-      
-      can :manage, :all
-      # can :invite, User
+      can :read, User
     elsif user.role? :moderator
-      # Quest Moderator users
-      
-      #TODO should moderate only own quests
       can :manage, Quest
+      can :read, User
+      can :update, User, :id => user.id
+    elsif user.role? :admin
+      can :manage, :all
     else
       raise "Not supported role for an user"
     end
+
 
     # Define abilities for the passed in user here. For example:
     #
