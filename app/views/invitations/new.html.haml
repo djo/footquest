@@ -1,9 +1,0 @@
-%h1 Отправить приглашение
-
-= semantic_form_for @user, :url => invitations_path do |form|
-  = form.inputs do
-    = form.input :first_name
-    = form.input :last_name
-    = form.input :email
-  = form.buttons do
-    = form.commit_button 'Пригласить'
