@@ -1,8 +1,11 @@
 Footquest::Application.routes.draw do
+  get "users/index"
+
   devise_for :users
   
   root :to => "quests#index"
   
+  resources :users
   resources :quests
   resources :invitations, :only => [:new, :create]
 

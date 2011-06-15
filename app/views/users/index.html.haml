@@ -1,0 +1,9 @@
+%h1 Пользователи
+
+%ul
+  - @users.each do |user|
+    %li
+      = link_to user_name(user), user
+  
+- if can? :create, User
+  = link_to 'Новый Пользователь', new_user_path  

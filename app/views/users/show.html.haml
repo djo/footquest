@@ -1,0 +1,16 @@
+%h1= user_name @user
+
+%p
+  Зарегистрирован 
+  = time_ago_in_words @user.created_at
+  назад.
+ 
+- if can? :update, @user
+  = link_to 'Изменить', edit_user_path(@user)  
+  |
+  
+- if can? :destroy, @user
+  = link_to 'Удалить', user_path(@user), :method => :delete, :confirm => 'Точно?'
+  |
+  
+= link_to 'К списку', users_path
