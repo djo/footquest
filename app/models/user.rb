@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :user_quests, :dependent => :destroy
+  has_many :quests, :through => :user_quests
+
   ROLES = ['admin', 'moderator']
 
   attr_accessible :first_name, :last_name, 

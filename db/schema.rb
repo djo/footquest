@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110616143546) do
+ActiveRecord::Schema.define(:version => 20110616144628) do
 
   create_table "quests", :force => true do |t|
     t.string   "title",                                       :null => false
@@ -23,6 +23,17 @@ ActiveRecord::Schema.define(:version => 20110616143546) do
     t.datetime "updated_at"
     t.string   "organizers"
   end
+
+  create_table "user_quests", :force => true do |t|
+    t.integer  "user_id",    :null => false
+    t.integer  "quest_id",   :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_quests", ["quest_id"], :name => "index_user_quests_on_quest_id"
+  add_index "user_quests", ["user_id", "quest_id"], :name => "index_user_quests_on_user_id_and_quest_id", :unique => true
+  add_index "user_quests", ["user_id"], :name => "index_user_quests_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "first_name",                                                   :null => false

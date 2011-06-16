@@ -13,6 +13,11 @@ Factory.define :quest do |f|
   f.start_at { |f| f.meeting_at + 1.hour }
 end  
 
+Factory.define :user_quest do |f|
+  f.association :user
+  f.association :quest
+end
+
 Factory.sequence :email do |n|
   "email#{n}@example.com"
 end
