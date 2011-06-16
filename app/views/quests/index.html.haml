@@ -1,10 +1,10 @@
 %h1 Квесты
 
 - @quests.each do |quest|
-  %h2= quest.title
+  %h2= link_to quest.title, quest
+  .organizers= "Организаторы: #{quest.organizers}"
   .meeting_place= quest.meeting_place
   .meeting_at=l quest.meeting_at, :format => :short
-  .more= link_to 'Описание', quest
   
 - if can? :create, Quest
   = link_to 'Новый Квест', new_quest_path  
