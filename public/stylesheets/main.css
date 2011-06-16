@@ -1,0 +1,17 @@
+#wrapper {
+  width: 80%;
+  min-width: 1030px;
+  margin: 0 auto;
+}
+
+#navigation, #navigation li, #user_menu li {
+  display: inline-block;
+}
+
+#navigation li.active a, #user_menu li.active a {
+  color: red;
+}
+
+#user_menu {
+  float :right;
+}

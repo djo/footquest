@@ -4,6 +4,6 @@ module ApplicationHelper
   end
   
   def active_on(name)
-    'actve' if controller_name == name
+    'active' if controller_name == name
   end
 end
