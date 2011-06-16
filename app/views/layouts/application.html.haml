@@ -8,4 +8,19 @@
   %body
     %p.notice= notice
     %p.alert= alert
+    
+    %ul#navigation
+      %li{ :class => active_on('quests') }= link_to 'Квесты', quests_path
+      %li{ :class => active_on('users') }= link_to 'Пользоваители', users_path
+      - if signed_in?
+        %li= link_to 'Профиль', user_path(current_user)
+    
+    %ul#user_menu
+      - if signed_in?
+        %li= link_to 'Профиль', user_path(current_user)
+        %li= link_to 'Выйти', destroy_user_session_path
+      - else
+        %li= link_to 'Войти', new_user_session_path
+      
+    
     = yield
