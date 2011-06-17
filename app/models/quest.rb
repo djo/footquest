@@ -10,6 +10,6 @@ class Quest < ActiveRecord::Base
   validates_numericality_of :cost, :greater_than => 0.01, :allow_blank => true
   
   def update_user_quests(user_ids)
-    false
+    user_ids.each { |id| user_quests.create!(:user_id => id)  }
   end
 end
