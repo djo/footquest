@@ -1,4 +1,16 @@
 module ControllerMacros
+  def login_admin
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:admin]
+      
+      @user = Factory.build :user
+      @user.role = 'admin'
+      @user.save!
+      
+      sign_in @user
+    end
+  end
+  
   # Admin's macroses
   # ---------------------------------------------------
   def should_allow_only_admins(&block)
