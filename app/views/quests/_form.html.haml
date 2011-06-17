@@ -1,14 +1,13 @@
-= quest.errors
-
 = semantic_form_for quest do |form|
   = form.inputs do
     = form.input :title
     = form.input :organizers
     
-    - available_organizers.each do |user|
-      = check_box_tag :user_ids, user.id, include_organizer?(quest, user), :id => dom_id(user), :name => 'user_ids[]'
-      = label_tag dom_id(user), user_name(user)
-      %br
+    .organizers
+      - available_organizers.each do |user|
+        %div
+          = check_box_tag :user_ids, user.id, include_organizer?(quest, user), :id => dom_id(user), :name => 'user_ids[]'
+          = label_tag dom_id(user), user_name(user)
     
     = form.input :description
     = form.input :meeting_place

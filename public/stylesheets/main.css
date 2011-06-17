@@ -15,3 +15,9 @@
 #user_menu {
   float :right;
 }
+
+form.quest .organizers {
+  margin-left: 25%;
+  margin-bottom: 20px;
+  width: 72%;
+}
