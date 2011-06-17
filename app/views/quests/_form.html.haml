@@ -5,9 +5,9 @@
     = form.input :title
     = form.input :organizers
     
-    = form.fields_for :user_quests, build_user_quests do |user_quest_fields|
-      = user_quest_check_box user_quest_fields, quest
-      = user_quest_fields.label :user_id, user_name(user_quest_fields.object.user) 
+    - User.all.each do |user|
+      = check_box_tag :user_ids, user.id, false, :id => dom_id(user), :name => 'user_ids[]'
+      = label_tag dom_id(user), user_name(user)
       %br
     
     = form.input :description
