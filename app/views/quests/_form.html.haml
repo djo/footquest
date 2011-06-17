@@ -5,8 +5,8 @@
     = form.input :title
     = form.input :organizers
     
-    - User.all.each do |user|
-      = check_box_tag :user_ids, user.id, false, :id => dom_id(user), :name => 'user_ids[]'
+    - available_organizers.each do |user|
+      = check_box_tag :user_ids, user.id, include_organizer?(quest, user), :id => dom_id(user), :name => 'user_ids[]'
       = label_tag dom_id(user), user_name(user)
       %br
     

@@ -3,13 +3,19 @@ class QuestsController < InheritedResources::Base
   
   def create
     create! do |success, failure|
-      success.html { create_users and redirect_to resource }
+      success.html { update_users and redirect_to resource }
+    end
+  end
+
+  def update
+    update! do |success, failure|
+      success.html { update_users and redirect_to resource }
     end
   end
   
   private
   
-  def create_users
+  def update_users
     @quest.update_user_quests(params[:user_ids]) if params[:user_ids].present?
     true
   end
