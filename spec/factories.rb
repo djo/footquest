@@ -5,6 +5,10 @@ Factory.define :user do |f|
   f.email { Factory.next(:email) }
 end  
 
+Factory.define :admin, :parent => :user do |f|
+  f.role 'admin'
+end  
+
 Factory.define :quest do |f|
   f.title 'Quest'
   f.description 'Description'

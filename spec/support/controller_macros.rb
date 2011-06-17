@@ -2,11 +2,7 @@ module ControllerMacros
   def login_admin
     before(:each) do
       @request.env["devise.mapping"] = Devise.mappings[:admin]
-      
-      @user = Factory.build :user
-      @user.role = 'admin'
-      @user.save!
-      
+      @user = Factory(:admin)
       sign_in @user
     end
   end
