@@ -12,10 +12,9 @@ module QuestsHelper
   end
   
   def organizer_list(quest)
-    if quest.users.any?
-      quest.users.map { |u| link_to user_name(u), u }.join ', '
-    else
-      quest.organizers
-    end
+    user_links = quest.users.map { |u| link_to user_name(u), u }
+    organizers = [h quest.organizers]
+    
+    (user_links + organizers).delete_if(&:blank?).join(', ').html_safe
   end
 end
