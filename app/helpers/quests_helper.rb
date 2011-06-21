@@ -10,4 +10,12 @@ module QuestsHelper
       quest.user_ids.include? user.id
     end
   end
+  
+  def organizer_list(quest)
+    if quest.users.any?
+      quest.users.map { |u| link_to user_name(u), u }.join ', '
+    else
+      quest.organizers
+    end
+  end
 end

@@ -2,7 +2,7 @@
 
 - @quests.each do |quest|
   %h2= link_to quest.title, quest
-  .organizers= "Организаторы: #{quest.organizers}"
+  .organizers= "Организаторы: #{organizer_list quest}".html_safe
   .meeting_place= quest.meeting_place
   .meeting_at=l quest.meeting_at, :format => :short
   

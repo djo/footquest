@@ -2,7 +2,7 @@
 
 .organizers
   Организаторы:
-  = @quest.organizers
+  = organizer_list(@quest).html_safe
 
 .description= @quest.description
 
