@@ -22,11 +22,11 @@
   За: 
   = @quest.cost
  
-- if can? :update, Quest
+- if can? :update, @quest
   = link_to 'Изменить', edit_quest_path(@quest)  
   |
   
-- if can? :destroy, Quest
+- if can? :destroy, @quest
   = link_to 'Удалить', quest_path(@quest), :method => :delete, :confirm => 'Точно?'
   |
   

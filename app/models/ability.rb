@@ -7,7 +7,8 @@ class Ability
       can :read, Quest
       can :read, User
     elsif user.role? :moderator
-      can :manage, Quest
+      can :read, Quest
+      can :update, Quest, :id => user.quest_ids
       can :read, User
       can :update, User, :id => user.id
     elsif user.role? :admin
