@@ -16,7 +16,7 @@ class QuestsController < InheritedResources::Base
   private
   
   def update_users
-    @quest.update_user_quests(params[:user_ids]) if params[:user_ids].present?
+    @quest.update_user_quests(params[:user_ids] || [])
     true
   end
 end
