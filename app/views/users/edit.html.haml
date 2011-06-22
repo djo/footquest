@@ -1,5 +1,7 @@
+= javascript 'views/users/edit'
+
 %h1 Редактирование
 
-= render 'users/form', :user => @user
+= render 'users/form', :user => @user, :with_password => true
 
 = link_to 'Отмена', users_path

@@ -1,5 +1,5 @@
 %h1 Новый пользователь
 
-= render 'users/form', :user => @user
+= render 'users/form', :user => @user, :with_password => false
 
 = link_to 'Отмена', users_path

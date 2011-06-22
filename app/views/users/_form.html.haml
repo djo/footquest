@@ -6,6 +6,19 @@
     
     - if current_user.role? :admin
       = form.input :role, :as => :select, :collection => User::ROLES
+
+    - if with_password  
+      = link_to 'Change Password', '', :id => 'change_password', :class => 'dashed'
+      
+      = form.inputs :id => 'password_section'  do
+        = form.input :password
+        = form.input :password_confirmation
   
   = form.buttons do
     = form.commit_button 'Сохранить'
+
+:javascript
+  $(function () { 
+    hidePasswordSection(#{hide_password_section?});
+  });
+    

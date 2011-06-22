@@ -1,3 +1,13 @@
+.hidden {
+  display: none;
+}
+
+a.dashed {
+  display: inline-block;
+  text-decoration: none;
+  border-bottom: 1px dashed #333;
+}
+
 #wrapper {
   width: 80%;
   min-width: 1030px;
@@ -20,4 +30,10 @@ form.quest .organizers {
   margin-left: 25%;
   margin-bottom: 20px;
   width: 72%;
+}
+
+#password_section {
+  background-color: #ddd;
+  padding: 15px 0 0 10px;
+  margin: 10px 0;
 }

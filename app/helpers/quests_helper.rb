@@ -17,4 +17,8 @@ module QuestsHelper
     
     (user_links + organizers).delete_if(&:blank?).join(', ').html_safe
   end
+  
+  def hide_password_section?
+    params[:user].nil? || params[:user][:password].nil?    
+  end
 end
