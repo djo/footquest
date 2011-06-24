@@ -31,3 +31,7 @@
   |
   
 = link_to 'К списку', quests_path
+
+%ul#comments
+  = render :partial => 'comments/comment', :collection => @quest.comments, :as => :comment
+  
