@@ -1,0 +1,9 @@
+= semantic_form_for [comment.quest, comment], :remote => true do |form|
+  .errors
+
+  = form.inputs do
+    = form.input :author
+    = form.input :message
+  
+  = form.buttons do
+    = form.commit_button 'Добавить'
