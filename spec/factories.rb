@@ -22,6 +22,12 @@ Factory.define :user_quest do |f|
   f.association :quest
 end
 
+Factory.define :comment do |f|
+  f.association :quest
+  f.message 'Comment'
+  f.author 'John Doe'
+end
+
 Factory.sequence :email do |n|
   "email#{n}@example.com"
 end
