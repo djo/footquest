@@ -13,6 +13,18 @@ $(function () {
     errors.html(xhr.responseText);
   }
   
+  var removeComment = function () {
+    var comment = $(this).parents('.comment');
+    comment.remove();
+  }
+  
+  var showError = function () {
+    alert('Something went wrong');
+  }
+  
   form.bind('ajax:success', addComment);
   form.bind('ajax:error', addErrors);
+  
+  comments.delegate('.delete', 'ajax:success', removeComment);
+  comments.delegate('.delete', 'ajax:error', showError);
 });

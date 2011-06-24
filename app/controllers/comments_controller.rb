@@ -14,7 +14,7 @@ class CommentsController < InheritedResources::Base
   end
   
   def destroy
-    create! do |success, failure|
+    destroy! do |success, failure|
       success.html { render :text => 'OK' }
       failure.html { render :text => 'FAIL', :status => :bad_request  }
     end

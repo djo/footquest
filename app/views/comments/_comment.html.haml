@@ -1,4 +1,8 @@
-%li
+%li.comment
   = comment.message
+  
   %small= comment.author
   %small= l comment.created_at, :format => :short
+  
+  - if can? :destroy, comment 
+    = link_to 'Удалить', quest_comment_path(comment.quest, comment), :method => :delete, :class => 'delete dashed', :remote => true
