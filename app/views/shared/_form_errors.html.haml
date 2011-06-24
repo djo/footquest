@@ -1,0 +1,7 @@
+- if resource.errors.any?
+  %ul.form_errors
+    - resource.errors.each do |key, value|
+      %li
+        = key
+        = value
+        

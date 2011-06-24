@@ -16,4 +16,8 @@ module ApplicationHelper
   def javascript(*args)
     content_for(:head) { javascript_include_tag(*args) }
   end
+  
+  def form_errors(resource)
+    render 'shared/form_errors', :resource => resource
+  end
 end

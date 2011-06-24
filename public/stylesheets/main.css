@@ -32,6 +32,11 @@ form.quest .organizers {
   width: 72%;
 }
 
+form.formtastic ul.form_errors {
+  color: red;
+  margin: 15px 0 15px 25%;
+}
+
 #password_section {
   background-color: #ddd;
   padding: 15px 0 0 10px;
