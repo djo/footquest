@@ -2,21 +2,21 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    can :read, Quest
+    can :read, User
+    can :create, Comment
 
-    if user.nil?
-      can :read, Quest
-      can :read, User
-    elsif user.role? :moderator
-      can :read, Quest
+    return unless user
+
+    if user.role? :moderator
       can :update, Quest, :id => user.quest_ids
-      can :read, User
       can :update, User, :id => user.id
+      can :destroy, Comment, :quest_id => user.quest_ids
     elsif user.role? :admin
       can :manage, :all
     else
       raise "Not supported role for an user"
     end
-
 
     # Define abilities for the passed in user here. For example:
     #

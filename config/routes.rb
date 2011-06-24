@@ -1,12 +1,13 @@
 Footquest::Application.routes.draw do
-  get "users/index"
-
   devise_for :users
   
   root :to => "quests#index"
   
   resources :users
-  resources :quests
+  
+  resources :quests do
+    resources :comments, :only => [:create, :destroy]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
