@@ -2,6 +2,6 @@
   %ul.form_errors
     - resource.errors.each do |key, value|
       %li
-        = key
+        = resource.class.human_attribute_name key
         = value
         
