@@ -14,16 +14,17 @@
 
 .meeting_at
   Время сбора: 
-  = @quest.meeting_at
+  =l @quest.meeting_at, :format => :short
 
 .start_at
   Время старта: 
-  = @quest.start_at
+  =l @quest.start_at, :format => :short
 
 .cost
-  За: 
-  = @quest.cost
- 
+  = number_to_currency @quest.cost, :unit => 'грн.'
+
+%br
+
 - if can? :update, @quest
   = link_to 'Изменить', edit_quest_path(@quest)  
   |
@@ -33,6 +34,9 @@
   |
   
 = link_to 'К списку', quests_path
+
+%br
+%br
 
 %p= render 'comments/form', :comment => @quest.comments.new
 

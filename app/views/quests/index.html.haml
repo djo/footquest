@@ -5,6 +5,9 @@
   .organizers= "Организаторы: #{organizer_list quest}".html_safe
   .meeting_place= quest.meeting_place
   .meeting_at=l quest.meeting_at, :format => :short
+  %hr
+  
+%br
   
 - if can? :create, Quest
   = link_to 'Новый Квест', new_quest_path  

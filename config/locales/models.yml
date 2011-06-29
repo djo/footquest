@@ -3,11 +3,14 @@ ru:
     models:
       user: Пользователь
       quest: Квест
+      comment: Комментарий
     attributes:
       user:
         first_name: Имя
         last_name: Фамилия
         email: Почта
+        password: Пароль
+        password_confirmation: Подтвердить
         role: Роль
       quest:
         title: Название         
@@ -19,4 +22,7 @@ ru:
         created_at: Время создания
         updated_at: Последнее изменение
         organizers: Ораганизаторы
+      comment:
+        author: Автор
+        message: Сообщение    
         
