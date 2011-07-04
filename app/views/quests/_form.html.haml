@@ -10,9 +10,10 @@
           = label_tag dom_id(user), user_name(user)
     
     = form.input :description
+    = form.input :date, :as => :date
     = form.input :meeting_place
-    = form.input :meeting_at, :as => :datetime
-    = form.input :start_at, :as => :datetime
+    = form.input :meeting_at, :as => :time
+    = form.input :start_at, :as => :time
     = form.input :cost
   = form.buttons do
     = form.commit_button 'Сохранить'

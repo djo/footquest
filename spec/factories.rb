@@ -12,8 +12,9 @@ end
 Factory.define :quest do |f|
   f.title 'Quest'
   f.description 'Description'
+  f.date Date.today
   f.meeting_place 'High Street'
-  f.meeting_at DateTime.new
+  f.meeting_at Time.new
   f.start_at { |f| f.meeting_at + 1.hour }
 end  
 

@@ -6,7 +6,7 @@ class AddDateToQuests < ActiveRecord::Migration
   end
 
   def self.down
-    remove_column :quests, :date, :date, :null => false
+    remove_column :quests, :date
     change_column :quests, :start_at, :datetime, :null => false
     change_column :quests, :meeting_at, :datetime, :null => false  
   end

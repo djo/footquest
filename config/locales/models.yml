@@ -15,6 +15,7 @@ ru:
       quest:
         title: Название         
         description: Описание
+        date: Дата проведения
         meeting_place: Место встречи
         meeting_at: Время встречи
         start_at: Время старта
