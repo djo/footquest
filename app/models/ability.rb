@@ -9,6 +9,7 @@ class Ability
     return unless user
 
     if user.role? :moderator
+      can :create, Quest
       can :update, Quest, :id => user.quest_ids
       can :update, User, :id => user.id
       can :destroy, Comment, :quest_id => user.quest_ids
