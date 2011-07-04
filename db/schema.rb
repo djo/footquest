@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110624101050) do
+ActiveRecord::Schema.define(:version => 20110704141222) do
 
   create_table "comments", :force => true do |t|
     t.integer  "quest_id",   :null => false
@@ -26,12 +26,13 @@ ActiveRecord::Schema.define(:version => 20110624101050) do
     t.string   "title",                                       :null => false
     t.text     "description",                                 :null => false
     t.string   "meeting_place",                               :null => false
-    t.datetime "meeting_at",                                  :null => false
-    t.datetime "start_at",                                    :null => false
+    t.time     "meeting_at",                                  :null => false
+    t.time     "start_at",                                    :null => false
     t.decimal  "cost",          :precision => 8, :scale => 2
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "organizers"
+    t.date     "date",                                        :null => false
   end
 
   create_table "user_quests", :force => true do |t|
