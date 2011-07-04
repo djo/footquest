@@ -9,7 +9,7 @@ a.dashed {
 }
 
 #wrapper {
-  width: 80%;
+  width: 75%;
   min-width: 1030px;
   margin: 0 auto;
 }
@@ -32,13 +32,37 @@ form.quest .organizers {
   width: 72%;
 }
 
+form.formtastic fieldset {
+  overflow: visible;
+}
+
 form.formtastic ul.form_errors {
   color: red;
   margin: 15px 0 15px 25%;
+}
+
+form.formtastic fieldset ol li input[type=text],
+form.formtastic fieldset ol li input[type=email],
+form.formtastic fieldset ol li input[type=password] {
+  width: 400px;
+}
+
+form.formtastic fieldset ol li.text textarea {
+  width: 400px;
+  height: 100px;
 }
 
 #password_section {
   background-color: #ddd;
   padding: 15px 0 0 10px;
   margin: 10px 0;
+}
+
+.comment {
+  padding: 5px;
+  list-style-type: none;
+}
+
+.odd {
+  background-color: #ddd;
 }
