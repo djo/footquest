@@ -34,6 +34,13 @@ Factory.define :map do |f|
   f.association :quest
 end
 
+Factory.define :placemark do |f|
+  f.association :map
+  f.name 'Point'
+  f.lat 37.609218
+  f.lng 55.753559
+end
+
 Factory.sequence :email do |n|
   "email#{n}@example.com"
 end

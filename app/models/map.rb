@@ -1,4 +1,6 @@
 class Map < ActiveRecord::Base
+  has_many :placemarks, :dependent => :destroy
+  
   belongs_to :user
   belongs_to :quest
 

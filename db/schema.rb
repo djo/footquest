@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713141826) do
+ActiveRecord::Schema.define(:version => 20110713144149) do
 
   create_table "comments", :force => true do |t|
     t.integer  "quest_id",   :null => false
@@ -31,6 +31,17 @@ ActiveRecord::Schema.define(:version => 20110713141826) do
 
   add_index "maps", ["quest_id"], :name => "index_maps_on_quest_id"
   add_index "maps", ["user_id"], :name => "index_maps_on_user_id"
+
+  create_table "placemarks", :force => true do |t|
+    t.integer  "map_id",                                      :null => false
+    t.string   "name",                                        :null => false
+    t.string   "description"
+    t.string   "icon_content"
+    t.decimal  "lat",          :precision => 10, :scale => 6, :null => false
+    t.decimal  "lng",          :precision => 10, :scale => 6, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "quests", :force => true do |t|
     t.string   "title",                                       :null => false
