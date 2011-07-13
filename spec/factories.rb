@@ -29,6 +29,11 @@ Factory.define :comment do |f|
   f.author 'John Doe'
 end
 
+Factory.define :map do |f|
+  f.association :user
+  f.association :quest
+end
+
 Factory.sequence :email do |n|
   "email#{n}@example.com"
 end

@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :user_quests, :dependent => :destroy
   has_many :quests, :through => :user_quests
+  has_many :maps, :dependent => :destroy
 
   ROLES = ['admin', 'moderator']
 
