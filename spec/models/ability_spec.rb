@@ -33,4 +33,27 @@ describe Ability do
       ability.should_not be_able_to(:update, Quest.new)
     end
   end
+
+  context "User" do
+    specify "unauthenticated user can only see users" do
+      ability = Ability.new nil
+      ability.should be_able_to(:read, User)
+      ability.should_not be_able_to(:manage, User)
+    end
+    
+    specify "moderator can only update his profile" do
+      user = Factory :user
+      
+      ability = Ability.new user
+      ability.should be_able_to(:update, user)
+      ability.should_not be_able_to(:update, User.new)
+    end
+    
+    specify "moderator can't create users" do
+      user = Factory :user
+      
+      ability = Ability.new user
+      ability.should_not be_able_to(:create, User)
+    end
+  end
 end
