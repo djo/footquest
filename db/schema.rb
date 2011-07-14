@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110713144149) do
+ActiveRecord::Schema.define(:version => 20110714133318) do
 
   create_table "comments", :force => true do |t|
     t.integer  "quest_id",   :null => false
@@ -42,6 +42,18 @@ ActiveRecord::Schema.define(:version => 20110713144149) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "polylines", :force => true do |t|
+    t.integer  "map_id",                                              :null => false
+    t.text     "encoded_points",                                      :null => false
+    t.string   "hint_content"
+    t.string   "stroke_color",   :limit => 8, :default => "ff0000ff", :null => false
+    t.integer  "stroke_width",                :default => 1,          :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "polylines", ["map_id"], :name => "index_polylines_on_map_id"
 
   create_table "quests", :force => true do |t|
     t.string   "title",                                       :null => false

@@ -41,6 +41,11 @@ Factory.define :placemark do |f|
   f.lng 55.753559
 end
 
+Factory.define :polyline do |f|
+  f.association :map
+  f.encoded_points "kjU9AkM1UwMUmv__V6v__8G7AADO5___"
+end
+
 Factory.sequence :email do |n|
   "email#{n}@example.com"
 end
