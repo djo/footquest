@@ -7,6 +7,7 @@ class Ability
     can :read, Map
     can :create, Comment
 
+    # Do return if user is guest 
     return unless user
 
     if user.role? :moderator
