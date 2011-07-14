@@ -2,16 +2,19 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    can :read, Quest
     can :read, User
+    can :read, Quest
+    can :read, Map
     can :create, Comment
 
     return unless user
 
     if user.role? :moderator
+      can :update, User, :id => user.id
       can :create, Quest
       can :update, Quest, :id => user.quest_ids
-      can :update, User, :id => user.id
+      can :create, Map
+      can :update, Map, :quest_id => user.quest_ids
       can :destroy, Comment, :quest_id => user.quest_ids
     elsif user.role? :admin
       can :manage, :all

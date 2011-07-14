@@ -56,4 +56,21 @@ describe Ability do
       ability.should_not be_able_to(:create, User)
     end
   end
+  
+  context "Map" do
+    specify "unauthenticated user can only see maps" do
+      ability = Ability.new nil
+      ability.should be_able_to(:read, Map)
+      ability.should_not be_able_to(:manage, Map)
+    end
+    
+    specify "moderator can only update map which he owns" do
+      user_quest = Factory :user_quest
+      map = Factory :map, :quest => user_quest.quest
+      
+      ability = Ability.new user_quest.user
+      ability.should be_able_to(:update, map)
+      ability.should_not be_able_to(:update, Map.new)
+    end
+  end
 end
