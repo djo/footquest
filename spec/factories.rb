@@ -32,6 +32,9 @@ end
 Factory.define :map do |f|
   f.association :user
   f.association :quest
+  f.lat 37.609218
+  f.lng 55.753559
+  f.zoom 12
 end
 
 Factory.define :placemark do |f|

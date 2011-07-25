@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110714133318) do
+ActiveRecord::Schema.define(:version => 20110725153545) do
 
   create_table "comments", :force => true do |t|
     t.integer  "quest_id",   :null => false
@@ -23,10 +23,13 @@ ActiveRecord::Schema.define(:version => 20110714133318) do
   add_index "comments", ["quest_id"], :name => "index_comments_on_quest_id"
 
   create_table "maps", :force => true do |t|
-    t.integer  "user_id",    :null => false
-    t.integer  "quest_id",   :null => false
+    t.integer  "user_id",                                                   :null => false
+    t.integer  "quest_id",                                                  :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "lng",        :precision => 10, :scale => 6,                 :null => false
+    t.decimal  "lat",        :precision => 10, :scale => 6,                 :null => false
+    t.integer  "zoom",                                      :default => 12, :null => false
   end
 
   add_index "maps", ["quest_id"], :name => "index_maps_on_quest_id"
