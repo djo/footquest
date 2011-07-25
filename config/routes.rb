@@ -6,7 +6,7 @@ Footquest::Application.routes.draw do
   resources :users
   
   resources :quests do
-    resource :maps, :only => [:show, :update]
+    resource :map, :only => [:show, :update]
     resources :comments, :only => [:create, :destroy]
   end
 

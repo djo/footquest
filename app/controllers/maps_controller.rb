@@ -5,12 +5,6 @@ class MapsController < InheritedResources::Base
   
   before_filter :check_permissions
 
-  def show
-  end
-
-  def update
-  end
-
   private
   
   def check_permissions
