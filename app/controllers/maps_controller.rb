@@ -1,13 +1,6 @@
 class MapsController < InheritedResources::Base
-  belongs_to :quest, :singleton => true
-  
-  actions :show, :update
-  
-  before_filter :check_permissions
+  load_and_authorize_resource
 
-  private
-  
-  def check_permissions
-    authorize! :update, parent
-  end
+  belongs_to :quest, :singleton => true
+  actions :show, :update
 end
